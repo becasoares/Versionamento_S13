@@ -2,8 +2,8 @@ import unittest
 from pessoa import Pessoa
 
 class TestePessoa(unittest.TestCase):
-    def __init__(self, methodName: str = "runTest"):
-        super().__init__(methodName)
+    def init(self, methodName: str = "runTest"):
+        super().init(methodName)
 
     # Teste mudar nome
     def test_set_nome(self):
@@ -29,7 +29,9 @@ class TestePessoa(unittest.TestCase):
 
         pessoa_teste = Pessoa(nome, sobrenome, idade)
 
-        self.assertTrue(False)
+        self.assertTrue(
+            pessoa_teste.get_nome() == f'{nome} {sobrenome}'
+        )
 
     # Teste pegar idade
     def test_get_idade(self):
